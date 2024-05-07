@@ -1,0 +1,45 @@
+using System;
+using System.Threading.Tasks;
+
+namespace CSharpTutorialContinue
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+		
+		int [] myDayArray = new int[435];
+		
+		foreach(int item in myDayArray)
+		{
+		Console.WriteLine(myDayArray);
+		}
+		
+		}
+			
+        Console.ReadLine();
+        }
+    }
+}
+
+using System;
+using System.Threading.Tasks;
+
+namespace CSharpTutorialContinue
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //dataType[] arrayName = new dataType[size];
+            int[] numbersArray = new int[5];
+
+            foreach (int item in numbersArray)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.ReadLine();
+        }
+    }
+}

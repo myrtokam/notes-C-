@@ -1,0 +1,33 @@
+DivideByZeroException
+
+Στην C#, το DivideByZeroException είναι μια ειδική κατηγορία exception που εκτοξεύεται όταν μια αριθμητική διαίρεση με ακέραιους αριθμούς πραγματοποιείται διαιρώντας με το μηδέν. 
+
+Αυτό το exception ανήκει στην κατηγορία System.ArithmeticException, η οποία χρησιμοποιείται γενικότερα για λάθη που σχετίζονται με αριθμητικές πράξεις.
+
+
+Πότε Εκτοξεύεται το DivideByZeroException
+
+Το DivideByZeroException εκτοξεύεται όταν ένας αριθμός προσπαθεί να διαιρεθεί με το μηδέν και οι τύποι των αριθμών είναι ακέραιοι 
+(int, long, short, byte, κλπ.). Για παράδειγμα, αν προσπαθήσετε να διαιρέσετε 10 με 0 χρησιμοποιώντας τους τύπους int, θα προκύψει DivideByZeroException.
+
+
+Παράδειγμα Κώδικα στην C#
+
+using System;
+
+class Example
+{
+    static void Main()
+    {
+        try
+        {
+            int a = 10;
+            int b = 0;
+            int c = a / b;  // Αυτή η γραμμή θα προκαλέσει DivideByZeroException
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine("An error occurred: " + ex.Message);
+        }
+    }
+}

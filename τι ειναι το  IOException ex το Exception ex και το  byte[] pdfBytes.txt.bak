@@ -1,0 +1,1 @@
+ IOException ex το Exception ex και το  byte[] pdfBytes = File.ReadAllBytes("document.pdf");

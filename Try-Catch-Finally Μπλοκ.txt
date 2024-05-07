@@ -1,0 +1,28 @@
+Try-Catch-Finally Μπλοκ
+
+
+   try {
+            int zero = 0;
+            int result = 5 / zero;  // Δημιουργεί DivisionByZeroException
+        } catch (DivideByZeroException ex) {
+            Console.WriteLine("Caught an exception: " + ex.Message);
+        } finally {
+            Console.WriteLine("This always runs.");
+        }
+		
+		
+		
+try: 
+Το τμήμα του κώδικα που μπορεί να προκαλέσει κάποια εξαίρεση τοποθετείται εντός του try block. 
+Εάν κάτι πάει στραβά εδώ, η εκτέλεση μεταφέρεται αμέσως στο αντίστοιχο catch block.
+
+
+catch (DivideByZeroException ex): 
+Αυτό το block εκτελείται αν συμβεί μια DivideByZeroException μέσα στο try block. 
+Το αντικείμενο ex αντιπροσωπεύει την εξαίρεση που συνέβη, και από αυτό μπορείτε να ανακτήσετε πληροφορίες όπως το μήνυμα σφάλματος.
+
+
+
+finally: 
+Αυτό το block εκτελείται ανεξάρτητα από το αν συμβεί κάποια εξαίρεση ή όχι. 
+Είναι ιδανικό για κώδικα που πρέπει να εκτελεστεί για να απελευθερώσει πόρους, όπως κλείσιμο αρχείων, βάσεων δεδομένων κλπ.

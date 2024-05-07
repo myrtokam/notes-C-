@@ -1,0 +1,27 @@
+αρχείο xml (xml-parser-toC#)
+
+σχόλια
+
+// <aw:Root> δηλώνει ένα στοιχείο με όνομα "Root" που ανήκει στο namespace "http://www.adventure-works.com".
+// <fc:child> δηλώνει ένα στοιχείο με όνομα "child" που ανήκει στο namespace "www.fourthcoffee.com".
+// <fc:child> δηλώνει ένα στοιχείο με όνομα "child" που ανήκει στο namespace "www.fourthcoffee.com".
+// <aw:DifferentChild> δηλώνει ένα στοιχείο με όνομα "DifferentChild" που ανήκει στο namespace "http://www.adventure-works.com".
+
+// Το xmlns είναι μια ειδική ατρίβουτ για τα XML στοιχεία που χρησιμοποιείται για τον ορισμό του namespace ενός XML στοιχείου. Ουσιαστικά, ορίζει το default namespace του έγγραφου ή ενός συγκεκριμένου κλάσματος του έγγραφου. 
+// Στο παράδειγμά σας, ορίζει τα namespaces aw και fc με τις αντίστοιχες URLs.
+
+// Το χαρακτηριστικό mycontent="test" ανήκει επίσης στο namespace "http://www.adventure-works.com".
+// είναι ένα χαρακτηριστικό (ή attribute) ενός XML στοιχείου. Τα χαρακτηριστικά παρέχουν περισσότερες πληροφορίες σχετικά με το στοιχείο. Στο συγκεκριμένο παράδειγμα, το χαρακτηριστικό mycontent έχει την τιμή test. 
+// Αυτό σημαίνει ότι το στοιχείο έχει ένα πρόσθετο χαρακτηριστικό με όνομα mycontent και την τιμή test.
+
+κώδικας
+
+
+<? xml version = "1.0" encoding="utif-8"?> 
+<aw: Root xmlns: aw="http://www.adventure-works.com" xmlns: fc="www.fourthcoffee.com">
+<fc: child>
+<aw: DifferentChild mycontent="test">other content</DifferentChild>
+</fc:child>
+<aw:child2> c2 content </aw:child2>
+<fc: child3> c3 content </fc:child3>
+</aw:Root>

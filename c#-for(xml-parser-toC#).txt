@@ -1,0 +1,49 @@
+τρόπος Α με χρήση Linq
+
+using System;
+...
+...
+...
+using System.Xml.Linq;    // εισάγει το namespace System.Xml.Linq στον κώδικα C#. 
+                         // Το namespace αυτό περιλαμβάνει τις κλάσεις που είναι απαραίτητες για τη διαχείριση XML έγγραφων χρησιμοποιώντας τη βιβλιοθήκη LINQ to XML 
+						 //στο πλαίσιο του περιβάλλοντος ανάπτυξης C# (.NET Framework ή .NET Core).
+
+...
+...
+...
+
+//XDocument.Load: Αρχικά, ο κώδικας φορτώνει ένα XML έγγραφο από έναν τοπικό φάκελο χρησιμοποιώντας τη μέθοδο XDocument.Load
+
+//Αυτός ο κώδικας περιέχει έναν χώρο ονομάτων (namespace) με το όνομα DotNetTools. Μέσα σε αυτόν τον χώρο ονομάτων ορίζεται ένας κλάση με το όνομα MyXmlParse. 
+//Μέσα σε αυτήν την κλάση ορίζεται μια μέθοδος με το όνομα BookXDocumentParse.
+
+//Στη μέθοδο BookXDocumentParse η μεταβλητή xml δημιουργείται από τη φόρτωση ενός XML αρχείου από τη διαδρομή που δίνεται (c:\Users\myrto\sourse\xml-parser-toC#.xml).
+
+//Η μεταβλητή nFC αναπαριστά το namespace "www.fourthcoffee.com"
+
+//με χρήση της μεθόδου Descendants του XDocument, επιλέγονται όλα τα στοιχεία (elements) που ανήκουν στο namespace "www.fourthcoffee.com" και έχουν την ετικέτα "child3".
+//Αυτά τα στοιχεία αποθηκεύονται στη μεταβλητή xElements.
+
+//με χρήση μιας βρόχου foreach, κάθε στοιχείο στη λίστα xElements εκτυπώνεται στην κονσόλα με τη χρήση της μεθόδου Console.WriteLine
+
+namespace DotNetTools
+{
+    class MyXmlParse
+    {
+        public static void BookXDocumentParse()
+        {
+            XDocument xml = XDocument.Load(@"c:\Users\myrto\source\xml-parser-toC#.xml");
+
+            XNamespace nFC = "www.fourthcoffee.com";
+
+            IEnumerable<XElement> xElements = xml.Descendants(nFC + "child3");
+
+            foreach (XElement element in xElements)
+            {
+                Console.WriteLine(element.Value);
+            }
+        }
+    }
+}
+	
+	

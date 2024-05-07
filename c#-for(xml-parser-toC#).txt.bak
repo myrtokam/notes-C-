@@ -1,0 +1,33 @@
+τρόπος Α με χρήση Linq
+
+using System;
+...
+...
+...
+using System.Xml.Linq;
+
+...
+...
+...
+
+namespace DotNetTools
+{
+  class MyXmlParse
+  {
+  public static void BookXDocumentParse()
+  {
+    XDocument xml =XDocument.Load(@"c:\Users\myrto\sourse\xml-parser-toC#.xml");
+	
+	XNamespace nFC ="www.fourthcoffee.com";
+	
+	IEnumerable<XElement> xElements=xml.Descendants(nFC +"child3");
+	
+	foreach (XElement element in xElements)
+		{
+		  console.writeline(element.value);
+		}
+  }
+}  
+	
+	
+	

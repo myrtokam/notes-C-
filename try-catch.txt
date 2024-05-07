@@ -1,0 +1,25 @@
+using System;
+
+class Program {
+
+public static void main()
+{
+Console.WriteLine("give an integer:");
+String userInput= Console.ReadKey();
+
+try
+{
+int number = int.parse(userInput);
+Console.WriteLine($"the number tha you wrote is:{number}");
+}
+catch(FormatExeption)
+{
+Console.WriteLine("not valid number");
+}
+catch(OverFlowExeption)
+{
+Console.WriteLine("to small or too big data");
+}
+Console.WriteLine("end of proseagure");
+}
+}

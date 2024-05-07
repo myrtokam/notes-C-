@@ -1,0 +1,33 @@
+Φόρτωση και Χειρισμός του XML Αρχείου
+
+using System;
+using System.Xml;
+...
+...
+...
+static void Main()
+{
+    XmlDocument doc = new XmlDocument();
+    try
+    {
+        // Φόρτωση του αρχείου XML
+        doc.Load("Notes.xml");
+
+        // Εμφάνιση των περιεχομένων του XML στην κονσόλα
+        Console.WriteLine(doc.OuterXml);
+
+        // Παράδειγμα πρόσβασης σε συγκεκριμένο στοιχείο
+        XmlNode node = doc.SelectSingleNode("/Root/Note");
+        if (node != null)
+        {
+            Console.WriteLine("Note found: " + node.InnerText);
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Error loading XML file: " + ex.Message);
+    }
+
+    Console.WriteLine("Press any key to exit.");
+    Console.ReadKey();
+}

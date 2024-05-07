@@ -1,0 +1,35 @@
+
+internal class Program
+{
+
+
+static void Main()
+{
+Console.WriteLine("giveAway");
+Console.WriteLine("choose from : 1 ,2 or 3");
+
+
+String userInput = Console.ReadKey();
+userInput = new int.TryParse; 
+
+
+if(userInput.intTryParse=="1")
+{
+Console.WriteLine($"you choose the number {1});
+}
+else if (userInput.intTryParse ==2)
+{
+Console.WriteLine($"you choose the number {2}");
+}
+else if (userInput.intTryParse == 3)
+{
+Console.WriteLine($"you choose number{3}");
+}
+else
+{
+Console.WriteLine($"give a valid number like {1,2 or 3}");
+}
+}
+Console.ReadKey();
+Console.WriteLine(userInput);
+}
