@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    interface IAnimal
+    {
+        void animalSound(); // μέθοδος διεπαφής (δεν έχει σώμα)
+    }
+    interface IRunning
+    {
+        void run(); // μέθοδος διεπαφής (δεν έχει σώμα)
+    }
+
+    // Η κλάση Pig "υλοποιεί" τη διεπαφή IAnimal
+    class Pig : IAnimal
+    {
+        public void animalSound()
+        {
+            // Το σώμα της animalSound() παρέχεται εδώ
+            Console.WriteLine("The pig says: wee wee");
+        }
+    }
+    class Dog : IAnimal, IRunning
+    {
+        public void animalSound()
+        {
+            Console.WriteLine("The dog says: woof woof");
+        }
+
+        public void run()
+        {
+            Console.WriteLine("The dog is running");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dog myDog = new Dog();
+            myDog.animalSound();
+            myDog.run();
+            Pig myPig = new Pig();  // Δημιουργία αντικειμένου Pig
+            myPig.animalSound();
+        }
+    }
