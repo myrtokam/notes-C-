@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+   
+
+   public interface IHouse
+    {
+         void material();
+    }
+
+    public interface ICar
+    {
+         void speed();
+    }
+
+    public class Person: IHouse, ICar
+    {
+        public string Name { get; set; }
+        public string LastName { get; set; }
+
+        public Person(string name, string lastName)
+        {
+            this.Name = name;
+            this.LastName = lastName;
+        }
+
+        public void material()
+        {
+            Console.WriteLine("check the materials ");
+        }
+
+        public void speed()
+        {
+            Console.WriteLine("check the speed ");
+        }
+
+
+
+    }
+
+
+
+
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Person atomo = new Person("Anna", "Papadopoulou");
+            atomo.material();
+            atomo.speed();
+
+
+            Console.WriteLine(atomo);
+
+
+            Console.ReadLine();
+        }
+    }
+}
