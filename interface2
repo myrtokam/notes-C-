@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    public interface Iperson
+    {
+        void Characteristics();
+        void character();
+    }
+
+    public interface IHomme
+    {
+        void Material();
+        void Size();
+    }
+
+    public class Person1 : Iperson
+    {
+        public string name;
+        public string lastname;
+
+        public Person1(string name, string lastname)
+        {
+            this.name = name;
+            this.lastname = lastname;
+        }
+
+
+        public void Characteristics()
+        {
+            Console.WriteLine("im the person one and  im browhn");
+
+        }
+        public void character()
+        {
+            Console.WriteLine("im the person one and im crazy");
+
+        }
+
+    }
+
+
+
+    public class MyHome : IHomme
+    {
+        public string MaterialType { get; private set; }
+        public string SizeType { get; private set; }
+
+        public MyHome(string materialType, string sizeType)
+        {
+            MaterialType = materialType;
+            SizeType = sizeType;
+        }
+
+        public void Material()
+        {
+            Console.WriteLine("my home is made from wood");
+        }
+
+        public  void Size()
+        {
+            Console.WriteLine("my home is big enough");
+        }
+
+    }
+
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Person1 z = new Person1("nick", "papadopoulos");
+            z.character();
+            z.Characteristics();
+
+            MyHome one = new MyHome("wood", "big");
+            one.Size();
+            one.Material();
+
+
+
+            /// Console.WriteLine(z.character());
+
+            // Console.WriteLine(z.Characteristics());
+            // Console.WriteLine(One.Size());
+            //Console.WriteLine(One.Materials());
+
+            Console.ReadLine();
+        }
+    }
+}
