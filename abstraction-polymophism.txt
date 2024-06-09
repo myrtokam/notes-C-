@@ -1,0 +1,135 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    public abstract class Cloths
+    {
+        public abstract string buying();
+
+        public virtual string items()
+        {
+            
+
+
+            return "YOU HAVE ITEMS";
+
+
+        }
+
+    }
+
+    public class Tshirts : Cloths
+    {
+       public int howMany { get; set; }
+
+        public string Color { get; private set; }
+        public string Size { get; private set; }
+        public string Sex { get; private set; }
+
+       
+        public Tshirts(string color, string size, string sex)
+        {
+            string Color = color;
+            string Size = size;
+            string Sex = sex;
+
+        }
+        public override string buying()
+        {
+            return "you have tshirt items";
+        }
+
+
+        public override string items()
+        {
+            return base.items();
+        }
+
+       
+    }
+
+    public class Hoodie : Cloths
+    {
+        public string Color { get; private set; }
+        public string Size { get; private set; }
+        public string Sex { get; private set; }
+
+
+
+        public Hoodie(string color, string size, string sex)
+        {
+            string Color = color;
+            string Size = size;
+            string Sex = sex;
+
+        }
+        public override string buying()
+        {
+            return "you have hoodie items";
+        }
+
+        public override string items()
+        {
+            return base.items();
+        }
+    }
+
+    public class Jeans: Cloths
+    {
+        public int size { get; set; }
+        public string color { get; set; }
+
+
+        public Jeans (int size, string color)
+        {
+            this.size = size;
+            this.color = color;
+        }
+
+        public override string buying()
+        {
+            return "you have jean items";
+        }
+
+        public override string items()
+        {
+            return base.items();
+        }
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Cloths Item1 = new Tshirts("blue", "xl", "f");
+            
+            Console.WriteLine(Item1.buying());
+            Console.WriteLine(Item1.items());
+
+            Cloths item2 = new Hoodie("black", "medium", "m");
+            item2.items();
+            item2.buying();
+
+            Console.WriteLine(item2.items());
+            Console.WriteLine(item2.buying());
+
+
+            Cloths item3 = new Jeans(3, "BLUE");
+            item3.buying();
+            item3.items();
+
+            Console.WriteLine(item3.items());
+            Console.WriteLine(item3.buying());
+
+
+
+
+            Console.ReadLine();
+        }
+    }
+}
