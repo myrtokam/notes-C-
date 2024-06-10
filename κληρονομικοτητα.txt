@@ -1,0 +1,72 @@
+using System;
+
+public class Zoa
+{
+    // Δημιούργησε μια βασική κλάση Animal με ιδιότητες Name και Age, καθώς και μία μέθοδο MakeSound().
+    // Δημιούργησε παράγωγες κλάσεις Dog και Cat που κληρονομούν από την Animal και υλοποιούν τη μέθοδο MakeSound()
+    // για να εκτυπώνουν τον ήχο που κάνει κάθε ζώο.
+
+    public animal()
+	{
+        public string Name { get; set; }
+        public string Age { get; set; }
+
+        public animal(string Name; string Age;)
+        {
+          this.Name=Name;
+          this.Age=Age;
+        }
+
+        public string MakeSound()
+        {
+            return 0;
+        }
+
+	}
+
+public class cat : animal(int Name. int Age)
+{
+    public override void MakeSound();
+    {
+    Console.WriteLine("neow");
+    }
+}
+
+public class dog: animal()
+{
+    public  override void MakeSound();
+    Console.WriteLine("gavv");
+}
+
+public class pig: animal()
+{
+    public override void MakeSound();
+    Console.WriteLine("oing");
+}
+
+public class Program
+{
+    static void Main(string[] args)
+    {
+
+        dog dog1 = new dog();
+        dog1.MakeSound();
+        dog1.Name = "eva";
+        dog1.Age = 2;
+       
+
+        cat myCat = new cat()
+        myCat.MakeSound();
+        myCat.Name = "nana";
+        myCat.Age = 3;
+
+        pig myPig = new pig;
+        myPig.MakeSound();
+        myPig.Name = "fei";
+        myPig.Age = 4;
+
+         Console.WriteLine();
+        
+        Console.ReadKey();
+    }
+}

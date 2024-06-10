@@ -1,0 +1,100 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
+using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using Nn.DocumentCreator.BL.Utilities;
+using Nn.DocumentCreator.Domain;
+using Nn.DocumentCreator.PdfFileManager;
+using Nn.Logging;
+using Nn.DocumentCreator.PDFAPI.Forms;
+using System.Web.Hosting;
+using Nn.Components.PDFAPI.Forms;
+
+namespace Nn.DocumentCreator.BL.NIN.Documents
+{
+    public class IndividualStatementLetter : IDocumentCreator
+    {
+        public string DocumentType { get; set; } = "IndividualStatementLetter";
+        public PdfForm PdfForm { get; set; }
+
+        public FileResult Generate(DocumentRequest request)
+        {
+            try
+            {
+                var backgroundFilePath = $"{HostingEnvironment.ApplicationPhysicalPath}\\bin\\Backgrounds\\GPIS\\NIN-Letter_GP_Individual_Statement.pdf";
+                Logger.Log(request.ReferenceId, Logging.LogLevel.Info, $"Background file path: {backgroundFilePath}");
+
+                if (string.IsNullOrEmpty(HostingEnvironment.ApplicationPhysicalPath))
+                {
+                    Logger.Log(request.ReferenceId, Logging.LogLevel.Error, "HostingEnvironment.ApplicationPhysicalPath is null or empty.");
+                }
+
+                if (!System.IO.File.Exists(backgroundFilePath))
+                {
+                    Logger.Log(request.ReferenceId, Logging.LogLevel.Error, $"Background file not found: {backgroundFilePath}");
+                    return new FileResult { Success = false, Exception = "Background file not found." };
+                }
+
+                if (string.IsNullOrEmpty(request.XmlFile))
+                {
+                    Logger.Log(request.ReferenceId, Logging.LogLevel.Warn, "XML file is empty.");
+                    backgroundFilePath = $"{HostingEnvironment.ApplicationPhysicalPath}\\bin\\Backgrounds\\GPIS\\NIN-Letter_GP_Individual_Statement.pdf";
+                }
+
+                XDocument xmlDoc = new XDocument();
+                try
+                {
+                    xmlDoc = XDocument.Parse(new StreamReader(new MemoryStream(request.XmlFile)).ReadToEnd());
+                    Logger.Log(request.ReferenceId, Logging.LogLevel.Info, "XML file loaded and parsed successfully.");
+                }
+                catch (Exception ex)
+                {
+                    Logger.Log(request.ReferenceId, Logging.LogLevel.Error, $"Error parsing XML: {ex.Message}");
+                    return new FileResult { Success = false, Exception = $"Error parsing XML: {ex.Message}" };
+                }
+
+                MemoryStream replacedDocument;
+                try
+                {
+                    Logger.Log(request.ReferenceId, Logging.LogLevel.Info, "Starting PDF transformation...");
+                    replacedDocument = PdfFormTransformation.IndividualStatementLetterStatementPdfWithXmlValues(backgroundFilePath, xmlDoc);
+
+                    if (replacedDocument == null)
+                    {
+                        Logger.Log(request.ReferenceId, Logging.LogLevel.Error, "PDF transformation returned null MemoryStream.");
+                        return new FileResult { Success = false, Exception = "PDF transformation returned null MemoryStream." };
+                    }
+
+                    if (replacedDocument.Length == 0)
+                    {
+                        Logger.Log(request.ReferenceId, Logging.LogLevel.Error, "PDF transformation returned empty MemoryStream.");
+                        return new FileResult { Success = false, Exception = "PDF transformation returned empty MemoryStream." };
+                    }
+
+                    Logger.Log(request.ReferenceId, Logging.LogLevel.Info, "PDF transformation completed successfully.");
+                }
+                catch (Exception ex)
+                {
+                    Logger.Log(request.ReferenceId, Logging.LogLevel.Error, $"Error transforming PDF: {ex.Message}");
+                    return new FileResult { Success = false, Exception = $"Error transforming PDF: {ex.Message}" };
+                }
+
+                var result = replacedDocument.ToArray();
+                Logger.Log(request.ReferenceId, Logging.LogLevel.Info, $"Document created successfully with file size: {result.Length} bytes.");
+
+                return new FileResult { Document = result, Success = true, Filename = $"{DocumentType}.pdf" };
+            }
+            catch (Exception ex)
+            {
+                Logger.Log(request.ReferenceId, Logging.LogLevel.Error, $"Exception: {ex.Message}");
+                return new FileResult { Success = false, Exception = ex.Message };
+            }
+        }
+    }
+}

@@ -1,0 +1,88 @@
+using ConsoleApp11;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp11
+{
+    public class Calculate
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
+
+        public Calculate()
+        {
+            Console.WriteLine("give an integer:");
+            var userInput = Console.ReadLine();
+            X = int.Parse(userInput);
+
+            Console.WriteLine("give a second integer:");
+            var userInput1 = Console.ReadLine();
+            Y = int.Parse(userInput1);
+        }
+
+        public int Add()
+        {
+            return X + Y;
+        }
+
+        public int Subtract()
+        {
+            return X - Y;
+        }
+
+        public int Multiply()
+        {
+            return X * Y;
+        }
+    }
+
+
+}
+
+internal class Program
+        {
+            static void Main(string[] args)
+            {
+
+
+
+                Console.WriteLine("what you want to do");
+
+                Console.WriteLine("[A]dd for adding");
+                Console.WriteLine("[S]ubstract for substraction");
+                Console.WriteLine("[M]ultiply for multipling");
+
+                var userChoice = Console.ReadLine();
+        string userCoice1 = string.Parse(userChoice);
+                Calculate x = new Calculate();
+
+                
+
+                if (userChoice == "a" || userChoice == "A")
+                {
+            
+                    int result = x.Add();
+                    Console.WriteLine(result);
+                }
+
+                else if (userChoice == "S" || userChoice == "s")
+                {
+                 int result = x.Subtract();
+                Console.WriteLine(result);
+                }
+                else if (userChoice == "M" || userChoice == "m")
+                {
+                int result = x.Multiply();
+                Console.WriteLine(result);
+                }
+                Console.ReadKey();
+            }
+        }
+
+        
+   
