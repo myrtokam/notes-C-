@@ -1,0 +1,117 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace DemoApplication
+{
+
+    
+       public enum NamesOfMonths { jan, feb, mar, apr, may,jun,jul,aug };
+       public enum ColorNames { Red, Orange, Yellow, Green, Blue, Indigo, Violet, Black, White, Gray }
+
+       public enum WomenNames {
+        Sarah,
+        Emily,
+        Hannah,
+        Margaret,
+        Mary,
+        Jane,
+        Elizabeth,
+        Jessica,
+        Lisa,
+        Amy
+    }
+
+       public enum MenNames
+    {
+        John,
+        William,
+        James,
+        Robert,
+        Richard,
+        Charles,
+        Thomas,
+        Christopher,
+        Matthew,
+        Joseph
+    }
+    public enum CarModel
+    {
+        Toyota,
+        Ford,
+        Honda,
+        Nissan,
+        Volkswagen,
+        BMW,
+        Mercedes,
+        Audi,
+        Ferrari,
+        Lamborghini
+    }
+
+    public enum MathCalculator
+    {
+        Addition,
+        Subtraction,
+        Multiplication,
+        Division,
+        Modulus,
+        Exponentiation,
+        Root,
+        Logarithm
+    }
+        
+    public enum Sports
+    {
+        Football,
+        Basketball,
+        Baseball,
+        Tennis,
+        Cricket,
+        Hockey,
+        Rugby,
+        Golf,
+        Boxing,
+        Swimming
+
+    }
+
+    public enum Countries
+    {
+        USA,
+        Canada,
+        Mexico,
+        UK,
+        France,
+        Germany,
+        Australia,
+        China,
+        Japan,
+        India
+
+    }
+    
+    class Program
+    {
+        enum Days { Sun, Mon, tue, Wed, thu, Fri, Sat };
+
+        static void Main(string[] args)
+        {
+            Console.Write(Days.Sun);
+
+           
+            Console.WriteLine(NamesOfMonths.jan);
+            Console.WriteLine(ColorNames.Red);
+
+            Console.WriteLine(WomenNames.Amy);
+            Console.WriteLine(MenNames.Matthew);
+            Console.WriteLine(CarModel.Ferrari);
+            Console.WriteLine(MathCalculator.Exponentiation);
+            Console.WriteLine(Sports.Football);
+            Console.WriteLine(Countries.China);
+
+            Console.ReadKey();
+        }
+    }
+}
