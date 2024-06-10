@@ -1,0 +1,138 @@
+using System;
+using System.Security.Cryptography.X509Certificates;
+
+
+namespace loops
+{
+
+    interface ICity
+    {
+        public string Population();
+        public string Houses();
+
+    }
+
+    interface ICars
+    {
+        public string Model();
+        public string Speed();
+
+    }
+    interface IPerson
+    {
+       public string Name();
+        public string LastName();
+
+        public int Age();
+    }
+
+
+
+
+    public class Individual : ICity, ICars, IPerson
+    {
+
+
+        public string FirstName { get; set; }
+        public string LastNames { get; set; }
+
+        public int Ages { get; set; }
+
+        public int CarSpeed { get; set; }
+        public string CarModel { get; set; }
+
+        public string CarName { get; set; }
+
+        public string CityName { get; set; }
+        public string CountryName { get; set; }
+        public double cityPopulation { get; set; }
+
+        public string HouseSize { get; set; }
+
+        public Individual(string FirstName, string LastNames, int Ages, int CarSpeed, string CarModel, string CarName, string CityName, string CountryName, double cityPopulation, string HouseSize)
+        {
+            this.FirstName = FirstName;
+            this.LastNames = LastNames;
+            this.Ages = Ages;
+            this.CarSpeed = CarSpeed;
+            this.CarModel = CarModel;
+            this.CarName = CarName;
+            this.CityName = CityName;
+            this.CountryName = CountryName;
+            this.cityPopulation = cityPopulation;
+            this.HouseSize = HouseSize;
+
+        }
+
+        public string Houses()
+        {
+            //Console.WriteLine("sf");
+            return "houses";
+        }
+
+        public string Population()
+        {
+            // Console.WriteLine("sfhf");
+            return "population";
+        }
+
+        public string Model()
+        {
+            return "FirstName";
+        }
+        public string Speed()
+        {
+            return "speed";
+        }
+
+        public string Name()
+        {
+            return "Name";
+        }
+        public string LastName()
+        {
+            return "lastname";
+        }
+
+
+        public int Age()
+        {
+            return 23;
+        }
+    }
+
+
+
+
+
+
+
+        public class program
+        {
+          
+
+            public static void Main(string[] args)
+            {
+
+                ICity individual1 = new Individual("xx", "yy", 93, 598, "ferrary", "mcqueen", "Athens", "greece", 2422.5453, "big");
+                individual1.Population();
+                individual1.Houses();
+
+
+                 ICars individual11 = new Individual("xjhhjx", "yyjj", 93, 234, "ferrary", "mcqueen", "Athens", "greece", 2422.5453, "big");
+                individual11.Speed();
+                individual11.Model();
+
+
+                IPerson individual111= new Individual("jhxx", "yjhy", 93, 234, "ferrary", "mcqueen", "Athens", "greece", 2422.5453, "big");
+                individual111.Age();
+                individual111.LastName();
+                individual111.Name();   
+
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.ReadKey();
+            }
+        }
+    }
+
