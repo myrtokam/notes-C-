@@ -1,0 +1,180 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.ConstrainedExecution;
+using System.Text;
+using System.Threading.Tasks;
+namespace DemoApplication
+{
+
+    
+       public enum WomenNames {
+        Sarah,
+        Emily,
+        Hannah,
+        Margaret,
+        Mary,
+        Jane,
+        Elizabeth,
+        Jessica,
+        Lisa,
+        Amy
+    }
+
+       public enum MenNames
+    {
+        John,
+        William,
+        James,
+        Robert,
+        Richard,
+        Charles,
+        Thomas,
+        Christopher,
+        Matthew,
+        Joseph
+    }
+    public enum CarModel
+    {
+        Toyota,
+        Ford,
+        Honda,
+        Nissan,
+        Volkswagen,
+        BMW,
+        Mercedes,
+        Audi,
+        Ferrari,
+        Lamborghini
+    }
+
+    
+
+    public enum Countries
+    {
+        USA,
+        Canada,
+        Mexico,
+        UK,
+        France,
+        Germany,
+        Australia,
+        China,
+        Japan,
+        India
+
+    }
+    
+    class Program
+    {
+      
+        static void Main(string[] args)
+        {
+
+            WomenNames WomansName = new WomenNames();
+            switch (WomansName)
+            {
+                case WomenNames.Lisa: Console.WriteLine("hi lisa");
+                  break;
+                case WomenNames.Amy: Console.WriteLine("hi Amy");
+                  break;
+                case WomenNames.Jessica: Console.WriteLine("hi jessica");
+                    break;
+                case WomenNames.Margaret: Console.WriteLine("Hi Margaret");
+                    break;
+                case WomenNames.Jane: Console.WriteLine("hi jane");
+                    break;
+                case WomenNames.Hannah: Console.WriteLine("hi hannah");
+                    break;
+                case WomenNames.Elizabeth: Console.WriteLine("Elizabeth");
+                    break;
+                case WomenNames.Mary: Console.WriteLine("hi Mary");
+                    break;
+
+            }
+
+            MenNames FirstName= new MenNames();
+                switch (FirstName)
+            {
+                case MenNames.James: Console.WriteLine("hi james");
+                break;
+                case MenNames.Richard: Console.WriteLine("hey");
+                break;
+                case MenNames.Robert: Console.WriteLine("goodmorning");
+                break;
+                case MenNames.William: Console.WriteLine("yiep");
+                break;
+                case MenNames.Charles: Console.WriteLine("hello");
+                break;
+                case MenNames.Matthew: Console.WriteLine("im mathew");
+                break;
+                case MenNames.Christopher: Console.WriteLine("goodnight");
+                break;
+                case MenNames.Thomas: Console.WriteLine("hey!!");
+                break;
+            }
+
+
+            CarModel car = new CarModel();
+            switch (car)
+            {
+                case CarModel.Audi:Console.WriteLine("ena");
+                break;
+                case CarModel.Honda:Console.WriteLine("dyo");
+                    break;
+                    case CarModel.Ferrari:Console.WriteLine("tria");
+                    break;  
+                    case CarModel.Nissan:Console.WriteLine("tessera");
+                    break;
+                case CarModel.Ford: Console.WriteLine("pente");
+                    break;
+                case CarModel.BMW:Console.WriteLine("eksi");
+                    break;
+                case CarModel.Toyota: Console.WriteLine("epta");
+                    break;
+                case CarModel.Mercedes: Console.WriteLine("okto");
+                    break;
+
+            }
+
+            Countries country = new Countries();
+            switch(country)
+            {
+                case Countries.Australia: Console.WriteLine("A");
+                break;
+                case Countries.UK: Console.WriteLine("a");
+                break;
+                case Countries.India: Console.WriteLine("B");
+                break;
+                case Countries.Canada: Console.WriteLine("c");
+                break;
+                case Countries.China: Console.WriteLine($"Australia");
+                break;
+                case Countries.France: Console.WriteLine("d");
+                break;
+                case 
+                Countries.Germany: Console.WriteLine("g");
+                break;
+                case Countries.Japan: Console.WriteLine("h");
+                break;
+                case 
+                Countries.Mexico: Console.WriteLine("m");
+                break;
+                case Countries.USA: Console.WriteLine("f");  
+                break;
+
+            }
+
+
+            Console.WriteLine(WomenNames.Amy);
+            Console.WriteLine(MenNames.Matthew);
+            Console.WriteLine(CarModel.Ferrari);
+           
+            Console.WriteLine(Countries.China);
+
+
+
+            Console.ReadKey();
+        }
+    }
+}
