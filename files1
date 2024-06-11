@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.ConstrainedExecution;
+using System.Text;
+using System.Threading.Tasks;
+using DemoApplication;
+using System.IO;
+
+namespace DemoApplication
+{
+   
+
+
+
+}
+    
+
+
+
+    class Program
+    {
+      
+        static void Main(string[] args)
+        {
+        string WriteText = "hello world";
+        File.WriteAllText("FileText.txt", WriteText);
+
+        string ReadText = File.ReadAllText("FileText.txt");
+        Console.WriteLine(ReadText);
+
+
+        Console.WriteLine();
+         Console.WriteLine();
+         Console.WriteLine();
+
+
+        Console.ReadKey();
+        }
+    }
