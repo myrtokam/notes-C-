@@ -1,0 +1,57 @@
+using System;
+using System.IO;
+
+
+
+
+
+public class Example
+{
+    //Writing to a File
+    //  Create a program that asks the user for their name and age, and then writes this information to a file called user_info.txt.
+
+
+   
+
+
+}
+
+
+
+    public class Programe
+    {
+        public static void Main(string[] args)
+        {
+
+
+        Console.WriteLine("write your name");
+        var UserIput = Console.ReadLine();
+        var User = Convert.ToString(UserIput);
+
+         Console.WriteLine(UserIput);
+        File.WriteAllText("user_info.txt", User);
+
+        var ReadText = File.ReadAllText("user_info.txt");
+        Console.WriteLine(ReadText);
+
+
+        Console.WriteLine("GIVE A NUMBER");
+        var userCoice = Console.ReadLine();
+        var userNumber = Convert.ToDouble(userCoice);
+        Console.WriteLine(userNumber);
+
+       
+        File.WriteAllText("user_info.txt", userCoice);
+        Console.WriteLine(userCoice);
+
+ 
+        
+        Console.WriteLine(userNumber + User);
+
+        Console.WriteLine(); 
+        Console.WriteLine();
+        Console.ReadKey();
+        }
+    }
+
+
