@@ -1,0 +1,31 @@
+public class Programe
+{
+    public static void Main(string[] args)
+    {
+        string Data;
+
+      try
+
+        {
+            StreamReader reader = new StreamReader("C:\\Users\\DE42QH\\Documents\\Data.txt");
+            Data = reader.ReadToEnd();
+
+            while (Data !=null)
+            {
+                Console.WriteLine(Data);
+                Data = reader.ReadLine();
+            }
+        }
+
+        catch(Exception e) 
+        
+        {
+        Console.WriteLine(e.Message);
+        }
+
+
+
+        Console.WriteLine();
+        Console.WriteLine();
+        Console.ReadKey();
+    }
