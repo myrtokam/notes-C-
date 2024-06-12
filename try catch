@@ -1,0 +1,65 @@
+    public static void Main(string[] args)
+    {
+
+        try
+        {
+            Console.WriteLine("write the point in numbers");
+            var userInput= Console.ReadLine();
+            int points = Convert.ToInt32(userInput);
+            string userInput11;
+            switch (points)
+            {
+                    case 10:
+                    case 9:
+                    Console.WriteLine("A");
+                //  return "A";
+                    break;
+
+                    case 8:
+                    case 7:
+                    case 6:
+                    Console.WriteLine("B");
+                    break;
+                    case 5:
+                    case 4:
+                    case 3:
+                    Console.WriteLine("C");
+                    break;
+
+                    case 2:
+                    case 1:
+                    Console.WriteLine("D");
+                    break;
+
+                   case 0:
+                   Console.WriteLine("E");
+                   break;
+
+                   default:
+                   Console.WriteLine("xx");
+                   break;
+            }
+        }
+
+
+        catch 
+        {
+            Console.WriteLine("error");
+           
+        }
+
+
+        finally
+        {
+            Console.WriteLine("ok");
+        }
+
+           
+
+        Console.WriteLine();
+        Console.ReadKey();
+    }
+      
+}
+
+
