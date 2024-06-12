@@ -1,0 +1,19 @@
+using System;
+using System.IO;
+
+
+
+
+
+public class Example
+{
+    //Create a program that reads the contents of a file called example.txt and displays it to the console.
+
+
+
+
+
+
+
+}
+
