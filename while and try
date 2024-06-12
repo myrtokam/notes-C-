@@ -1,0 +1,44 @@
+public class Programe
+{
+   
+    public static void Main(string[] args)
+    {
+
+        try
+        {
+            Console.WriteLine("write the point in numbers");
+            var userInput= Console.ReadLine();
+            int points = Convert.ToInt32(userInput);
+
+
+            while (userInput!=null) 
+            {
+                points++;
+               Console.WriteLine(points); 
+            
+            }
+           
+        }
+
+
+        catch 
+        {
+            Console.WriteLine("error");
+           
+        }
+
+
+        finally
+        {
+            Console.WriteLine("ok");
+        }
+
+           
+
+        Console.WriteLine();
+        Console.ReadKey();
+    }
+      
+}
+
+
