@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+//Δημιουργήστε έναν πίνακα με 10 ακεραίους και βρείτε τη μέγιστη και ελάχιστη τιμή του πίνακα.
+
+{ 
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+       
+        int[] myArray = {1323, 2424, 53453, 52352, 524, 56, 425, 2525, 5252, 2525 };
+        int Min = myArray[0];
+        int Max = myArray[0];
+            int i;
+
+
+        foreach(int myArrays in myArray)
+        {
+            if (myArrays < Min)
+            {
+                    Min = myArrays;
+
+            }
+
+                if (myArrays > Max)
+                {
+                    Max = myArrays;
+
+                }
+            }
+            Console.WriteLine(Min);
+            Console.WriteLine(Max);
+
+
+            Console.ReadLine();
+        }
+    }
+}
