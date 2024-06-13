@@ -1,0 +1,29 @@
+
+public class Programe
+{
+   
+    public static void Main(string[] args)
+    {
+
+
+        string word;
+            do
+            {
+                Console.WriteLine("give your name");
+               word = Console.ReadLine();
+              
+               
+                
+            }
+            while (word.Length<=20);
+           
+
+       
+
+           
+
+        Console.WriteLine();
+        Console.ReadKey();
+    }
+      
+}
