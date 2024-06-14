@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace practise222
+{
+    //Create a list of strings and add the following items: "Apple", "Banana", "Cherry".
+    //Then, remove the item "Banana" from the list. Finally, print out the list.
+
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+          
+            List<string> fruits = new List<string>()
+        { 
+    "Apple",
+    "Banana",
+    "Cherry",
+    "Date",
+    "Elderberry",
+    "Fig",
+    "Grape",
+    "Guava",
+    "Honeydew",
+    "Ice Apple",
+    "Jackfruit",
+    "Kiwi",
+    "Lemon",
+    "Mango",
+    "Nectarine",
+    "Orange",
+    "Papaya",
+    "Quince",
+    "Raspberry",
+    "Strawberry",
+    "Tangerine",
+    "Ugli fruit",
+    "Victoria plum",
+    "Watermelon",
+    "Xigua",
+    "Yuzu",
+    "Ziziphus"
+        };
+
+
+
+           for(int i = 0; i < fruits.Count; i++)
+            {
+                Console.WriteLine(fruits[i]);
+            }
+
+                Console.ReadKey();
+            }
+        }
+    }
+    
