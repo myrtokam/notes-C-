@@ -1,0 +1,24 @@
+using System;
+using System.Collections;
+using System.Linq;
+
+
+//Create an array of integers with the following values: 5, 2, 8, 3, 1.
+////Write a method that sorts the array in ascending order and prints the sorted array to the console.
+
+public class Program
+{
+    static void Main(string[] args)
+    {
+        string[] fruits = { "Banana", "Apple", "Cherry", "Date", "Elderberry" };
+
+        var sortedFruits = fruits.OrderBy(a => z);
+
+        foreach (string fruit in sortedFruits)
+        {
+            Console.WriteLine(fruit);
+        }
+
+        Console.ReadKey();
+    }
+}
