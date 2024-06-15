@@ -1,0 +1,47 @@
+int[] A = { 1, 3, 5 };
+int[] B = { 2, 4, 6 };
+int[] C = A.Concat(B).ToArray();
+foreach (int num in C)
+{
+    Console.Write(num + " ");
+}
+
+////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+
+    //Δημιουργήστε δύο πίνακες: A = [1, 3, 5] και B = [2, 4, 6].
+   // Συγχωνεύστε τους πίνακες σε έναν νέο πίνακα C και εκτυπώστε τον πίνακα C.
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int[] myArray = { 1, 3, 5 };
+            int[] yourArray = { 2, 4, 6 };
+
+            for(int i=0; i<myArray.Length; i++)
+            {
+                for( int j=0; j<yourArray.Length; j++)
+                {
+                    Console.WriteLine(myArray[i] + yourArray[j]);
+                }
+            }
+
+            Console.WriteLine();
+        
+        Console.ReadKey(); // Περιμένει να πατήσει ο χρήστης ένα πλήκτρο πριν κλείσει η κονσόλα
+        }
+
+        
+    }
+}
