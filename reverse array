@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+
+    //Δημιουργήστε έναν πίνακα με τις τιμές [1, 2, 3, 4, 5].
+   // Αντιστρέψτε τον πίνακα και εκτυπώστε τον.
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int [] myArray = { 1, 2, 3, 4, 5 };
+
+            Array.Reverse(myArray);
+            foreach (int Array in myArray)
+            {
+
+
+                Console.WriteLine(Array);
+            }
+            Console.ReadKey(); // Περιμένει να πατήσει ο χρήστης ένα πλήκτρο πριν κλείσει η κονσόλα
+        }
+
+        
+    }
+}
