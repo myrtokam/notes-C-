@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+
+    //Υπολογισμός μέσου όρου:
+    //Δημιουργήστε έναν πίνακα με τις τιμές[10, 20, 30, 40, 50].
+    //Υπολογίστε και εκτυπώστε τον μέσο όρο των τιμών του πίνακα.
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int [] myArray = { 10, 20, 30, 40, 50 };
+
+           
+            double    overageIs = myArray.Average();
+          
+
+
+            Console.WriteLine(overageIs);
+
+            Console.ReadKey(); // Περιμένει να πατήσει ο χρήστης ένα πλήκτρο πριν κλείσει η κονσόλα
+        }
+
+        
+    }
+}
