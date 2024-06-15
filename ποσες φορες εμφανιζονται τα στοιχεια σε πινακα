@@ -1,0 +1,6 @@
+int[] array = { 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 };
+var frequency = array.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
+foreach (var kvp in frequency)
+{
+    Console.WriteLine(kvp.Key + " appears " + kvp.Value + " times");
+}
