@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+
+{
+    //Αναζήτηση στη Λίστα
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> colors = new List<string> { "red", "blue", "green", "yellow", "purple" };
+
+          if(colors.Contains("red"))
+            {
+                Console.WriteLine("rd");
+
+            }    
+                
+          else
+            {
+                Console.WriteLine("rm lkd");
+            }    
+            Console.ReadKey(); // Waits for a key press before closing the console window
+        }
+    }
+}
