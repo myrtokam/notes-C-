@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+
+{
+    //Δημιουργήστε μια λίστα ακεραίων και προσθέστε σε αυτήν τα ακόλουθα στοιχεία: 1, 2, 3, 4, 5.
+    //Εκτυπώστε τα στοιχεία της λίστας.
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            List<int> name = new List<int> { 1, 2, 3, 4, 5 };
+
+            foreach( int names in name)
+            {
+                Console.WriteLine(name.Count);
+            }
+            
+
+            Console.WriteLine();
+            
+
+            
+            Console.WriteLine();
+
+
+            Console.ReadLine();
+        }
+    }
+}
