@@ -1,0 +1,70 @@
+Τα dictionaries (λεξικά) στην C# είναι συλλογές δεδομένων που αποθηκεύουν ζεύγη κλειδιών-τιμών (key-value pairs).
+Χρησιμοποιούνται όταν χρειάζεται να ανακτήσετε μια τιμή βάσει ενός μοναδικού κλειδιού. Η κλάση Dictionary<TKey, TValue> είναι η κύρια υλοποίηση.
+Βασικά Χαρακτηριστικά:
+
+
+Προσθήκη στοιχείων:
+
+    
+
+Dictionary<int, string> dict = new Dictionary<int, string>();
+dict.Add(1, "One");
+dict.Add(2, "Two");
+
+
+Αναζήτηση τιμών:
+
+
+
+string value = dict[1]; // "One"
+
+
+
+Έλεγχος ύπαρξης κλειδιού:
+
+
+
+
+if (dict.ContainsKey(2)) {
+    Console.WriteLine("Key exists");
+}
+
+
+
+
+Αφαίρεση στοιχείων:
+
+
+
+
+dict.Remove(1);
+
+Ενημέρωση τιμής:
+
+
+
+
+    dict[2] = "Twenty";
+
+
+
+
+Παράδειγμα:
+
+
+
+
+using System;
+using System.Collections.Generic;
+
+class Program {
+    static void Main() {
+        Dictionary<string, int> ages = new Dictionary<string, int>();
+        ages["Alice"] = 25;
+        ages["Bob"] = 30;
+
+        foreach (var pair in ages) {
+            Console.WriteLine($"{pair.Key}: {pair.Value}");
+        }
+    }
+}
