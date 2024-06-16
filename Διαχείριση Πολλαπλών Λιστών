@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<int> firstList = new List<int> { 1, 2, 3 };
+        List<int> secondList = new List<int> { 4, 5, 6 };
+
+        // Συγχώνευση των δύο λιστών
+        List<int> mergedList = new List<int>(firstList);
+        mergedList.AddRange(secondList);
+
+        // Εκτύπωση της τελικής λίστας
+        Console.WriteLine("Η συγχωνευμένη λίστα περιλαμβάνει τα εξής στοιχεία:");
+        foreach (int item in mergedList)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
