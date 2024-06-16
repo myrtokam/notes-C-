@@ -1,0 +1,23 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter a number:");
+        var userInput = Console.ReadLine();
+
+        bool isParsingSuccessful = int.TryParse(userInput, out int number);
+
+        if (isParsingSuccessful)
+        {
+            Console.WriteLine("Parsing worked, number is " + number);
+        }
+        else
+        {
+            Console.WriteLine("Parsing was not successful");
+        }
+
+        Console.ReadKey();
+    }
+}
