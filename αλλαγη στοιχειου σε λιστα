@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+
+{
+    //Δημιουργήστε μια λίστα με τα ακόλουθα στοιχεία: "red", "blue", "green", "yellow", "purple".
+   // Αλλάξτε το στοιχείο "yellow" σε "orange".
+   //Εκτυπώστε όλα τα στοιχεία της λίστας
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> colors = new List<string> { "red", "blue", "green", "yellow", "purple" };
+
+            // Finding the index of "yellow" and replacing it with "orange"
+            int index = colors.IndexOf("yellow");
+            if (index != -1)
+            {
+                colors[index] = "orange";
+            }
+
+            // Iterating over the list and printing each color
+            foreach (string color in colors)
+            {
+                Console.WriteLine(color);
+            }
+
+            Console.ReadKey(); // Waits for a key press before closing the console window
+        }
+    }
+}
