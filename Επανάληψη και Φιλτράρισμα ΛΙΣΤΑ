@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        // Δημιουργία λίστας με αριθμούς από το 1 έως το 100
+        List<int> numbers = Enumerable.Range(1, 100).ToList();
+
+        // Δημιουργία νέας λίστας με τους άρτιους αριθμούς
+        List<int> evenNumbers = numbers.Where(x => x % 2 == 0).ToList();
+
+        // Εκτύπωση της λίστας των άρτιων αριθμών
+        Console.WriteLine("Άρτιοι αριθμοί από το 1 έως το 100:");
+        foreach (int number in evenNumbers)
+        {
+            Console.WriteLine(number);
+        }
+    }
+}
