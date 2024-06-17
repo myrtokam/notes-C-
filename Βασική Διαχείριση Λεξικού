@@ -1,0 +1,27 @@
+Δημιουργήστε ένα λεξικό που αποθηκεύει ονόματα ως κλειδιά και ηλικίες ως τιμές. Προσθέστε κάποιες καταχωρήσεις, ανακτήστε την ηλικία ενός ατόμου, και τυπώστε όλα τα στοιχεία του λεξικού.
+
+using System;
+using System.Collections.Generic;
+
+public class BasicDictionaryManagement
+{
+    public static void Main()
+    {
+        Dictionary<string, int> peopleAges = new Dictionary<string, int>();
+
+        // Προσθήκη καταχωρήσεων
+        peopleAges.Add("Maria", 28);
+        peopleAges.Add("John", 35);
+        peopleAges.Add("Dimitris", 22);
+
+        // Ανάκτηση της ηλικίας του John
+        int age = peopleAges["John"];
+        Console.WriteLine($"John is {age} years old.");
+
+        // Εμφάνιση όλων των καταχωρήσεων
+        foreach (var pair in peopleAges)
+        {
+            Console.WriteLine($"{pair.Key} is {pair.Value} years old.");
+        }
+    }
+}
