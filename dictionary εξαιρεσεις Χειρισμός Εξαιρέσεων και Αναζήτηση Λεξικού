@@ -1,0 +1,37 @@
+Διαχειριστείτε πιθανές εξαιρέσεις όταν προσπαθείτε να ανακτήσετε την ηλικία ενός ατόμου που δεν υπάρχει στο λεξικό. Επιπλέον, χρησιμοποιήστε τη μέθοδο TryGetValue για ασφαλέστερη ανάκτηση τιμών.
+
+  using System;
+using System.Collections.Generic;
+
+public class ExceptionHandlingInDictionary
+{
+    public static void Main()
+    {
+        Dictionary<string, int> peopleAges = new Dictionary<string, int>
+        {
+            {"Maria", 28},
+            {"John", 35}
+        };
+
+        try
+        {
+            // Προσπάθεια ανάκτησης της ηλικίας ενός ατόμου που δεν υπάρχει στο λεξικό
+            int age = peopleAges["George"];
+            Console.WriteLine($"George is {age} years old.");
+        }
+        catch (KeyNotFoundException)
+        {
+            Console.WriteLine("George is not found in the dictionary.");
+        }
+
+        // Ασφαλής ανάκτηση χρησιμοποιώντας TryGetValue
+        if (peopleAges.TryGetValue("Maria", out int mariaAge))
+        {
+            Console.WriteLine($"Maria is {mariaAge} years old.");
+        }
+        else
+        {
+            Console.WriteLine("Maria is not found in the dictionary.");
+        }
+    }
+}
