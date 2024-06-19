@@ -1,0 +1,20 @@
+Τα ανώνυμα αντικείμενα είναι πολύ χρήσιμα σε LINQ queries όπου θέλεις να επιστρέψεις συγκεκριμένα πεδία από ένα query χωρίς να ορίσεις μια νέα κλάση.
+
+var people = new List<Person>
+{
+    new Person { FirstName = "John", LastName = "Doe", Age = 30 },
+    new Person { FirstName = "Jane", LastName = "Doe", Age = 25 }
+};
+
+var result = from p in people
+             select new { p.FirstName, p.LastName };
+
+foreach (var person in result)
+{
+    Console.WriteLine($"{person.FirstName} {person.LastName}");
+}
+
+Στο παραπάνω παράδειγμα:
+
+    Το select new { p.FirstName, p.LastName } δημιουργεί ανώνυμα αντικείμενα που περιέχουν μόνο τα πεδία FirstName και LastName από την αρχική συλλογή people.
+    Αυτά τα ανώνυμα αντικείμενα αποθηκεύονται στη συλλογή result και χρησιμοποιούνται στο foreach loop.
