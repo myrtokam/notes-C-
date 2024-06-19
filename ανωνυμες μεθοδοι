@@ -1,0 +1,20 @@
+Ανώνυμες μέθοδοι είναι μέθοδοι που δεν έχουν όνομα και ορίζονται απευθείας στη θέση που πρόκειται να χρησιμοποιηθούν. 
+Στη C#, οι ανώνυμες μέθοδοι εισήχθησαν με την έκδοση 2.0 και επιτρέπουν στους προγραμματιστές να γράφουν inline κώδικα που μπορεί να χρησιμοποιηθεί ως παράμετρος σε μεθόδους που περιμένουν delegates.
+Η χρήση τους μειώθηκε μετά την εισαγωγή των συναρτήσεων λάμδα, αλλά εξακολουθούν να είναι χρήσιμες σε ορισμένες περιπτώσεις.
+
+
+public delegate void PrintDelegate(string message);
+
+public static void Main()
+{
+    PrintDelegate print = delegate(string message) {
+        Console.WriteLine(message);
+    };
+
+    print("Hello, World!");
+}
+
+Στο παραπάνω παράδειγμα:
+
+    Η delegate(string message) { Console.WriteLine(message); } είναι μια ανώνυμη μέθοδος.
+    Η ανώνυμη μέθοδος εκχωρείται στο delegate PrintDelegate.
